@@ -63,6 +63,7 @@ public class MyAccountPage {
     }
 
     public void clickOnWomenSession(){
+        logger.info("Clicking on WOMEN session");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Women"))).click();
     }
 

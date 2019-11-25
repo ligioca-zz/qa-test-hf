@@ -8,22 +8,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Product {
+public class ProductPage {
 
     private WebDriver driver;
     private WebDriverWait wait = Base.wait;
     static public String email;
-    final static Logger logger = Logger.getLogger(MyAccountPage.class);
+    final static Logger logger = Logger.getLogger(ProductPage.class);
 
-    public Product(WebDriver driver) {
+    public ProductPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void clickOnAddToCart(){
+        logger.info("Click on Add to Cart");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("Submit"))).click();
     }
 
     public void clickOnProceedToCheckOut(){
+        logger.info("Click on Proceed to checkout");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='layer_cart']//a[@class and @title='Proceed to checkout']"))).click();
     }
 }

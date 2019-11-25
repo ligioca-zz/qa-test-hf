@@ -8,19 +8,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class OrderAddressProcess {
+public class OrderPaymentPage {
 
     private WebDriver driver;
     private WebDriverWait wait = Base.wait;
     static public String email;
-    final static Logger logger = Logger.getLogger(MyAccountPage.class);
+    final static Logger logger = Logger.getLogger(OrderPaymentPage.class);
 
-    public OrderAddressProcess(WebDriver driver) {
+    public OrderPaymentPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void clickOnProceedToCheckOut(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("processAddress"))).click();
-
+    public void selectPaymentMethodPayByBankWire(){
+        logger.info("Select BankWire payment method");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("bankwire"))).click();
     }
 }

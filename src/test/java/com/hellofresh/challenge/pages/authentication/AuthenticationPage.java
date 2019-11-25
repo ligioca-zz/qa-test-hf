@@ -14,7 +14,7 @@ public class AuthenticationPage {
 
     private WebDriver driver;
     WebDriverWait wait;
-    final static Logger logger = Logger.getLogger(HomePage.class);
+    final static Logger logger = Logger.getLogger(AuthenticationPage.class);
 
     public AuthenticationPage(WebDriver driver) {
         this.driver = driver;

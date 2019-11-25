@@ -21,10 +21,6 @@ public class AccountCreationPage {
         this.driver = driver;
     }
 
-    public void selectTitleInPersonalInformation(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("id_gender2"))).click();
-    }
-
     public void fillFirstNameInPersonalInformation(){
         String firstName = PropertiesHelper.prop.getProperty("newUserfirstName");
         logger.info("Filling first name: " + firstName);

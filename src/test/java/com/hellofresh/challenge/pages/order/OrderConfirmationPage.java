@@ -9,13 +9,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class OrderConfirmation {
+public class OrderConfirmationPage {
     private WebDriver driver;
     private WebDriverWait wait = Base.wait;
     static public String email;
-    final static Logger logger = Logger.getLogger(MyAccountPage.class);
+    final static Logger logger = Logger.getLogger(OrderConfirmationPage.class);
 
-    public OrderConfirmation(WebDriver driver) {
+    public OrderConfirmationPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -36,7 +36,7 @@ public class OrderConfirmation {
     }
 
     public boolean isTheConfirmationLastStep(){
-        logger.info("Order confirmation message should be displayed");
+        logger.info("Confirmation is the last step of order process");
         return driver.findElement(By.xpath("//li[@class='step_done step_done_last four']")).isDisplayed() &&
                 driver.findElement(By.xpath("//li[@id='step_end' and @class='step_current last']")).isDisplayed();    }
 

@@ -8,22 +8,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class OrderShipping {
+public class OrderAddressProcessPage {
 
     private WebDriver driver;
     private WebDriverWait wait = Base.wait;
     static public String email;
-    final static Logger logger = Logger.getLogger(MyAccountPage.class);
+    final static Logger logger = Logger.getLogger(OrderAddressProcessPage.class);
 
-    public OrderShipping(WebDriver driver) {
+    public OrderAddressProcessPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void clickOnProceedToCheckOut(){
-        driver.findElement(By.name("processCarrier")).click();
-    }
+        logger.info("Clicking on proceed to checkout");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("processAddress"))).click();
 
-    public void checkTermsOfService(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("uniform-cgv"))).click();
     }
 }

@@ -8,19 +8,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Order {
+public class OrderPage {
 
 
     private WebDriver driver;
     private WebDriverWait wait = Base.wait;
     static public String email;
-    final static Logger logger = Logger.getLogger(MyAccountPage.class);
+    final static Logger logger = Logger.getLogger(OrderPage.class);
 
-    public Order(WebDriver driver) {
+    public OrderPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void clickOnProceedToCheckOut(){
+        logger.info("Click on Proceed to checkout");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class,'cart_navigation')]/a[@title='Proceed to checkout']"))).click();
 
     }
