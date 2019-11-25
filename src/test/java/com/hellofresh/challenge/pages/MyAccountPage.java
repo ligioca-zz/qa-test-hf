@@ -62,4 +62,8 @@ public class MyAccountPage {
         return driver.getCurrentUrl().contains("controller=my-account");
     }
 
+    public void clickOnWomenSession(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Women"))).click();
+    }
+
 }
